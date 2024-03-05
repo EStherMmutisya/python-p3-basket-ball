@@ -182,3 +182,52 @@ def game_dict():
             ]
         }
     }
+
+#Num points_per_game
+def num_points_per_game(player_name):
+    game_data = game_dict()
+
+    for team, team_data in game_data.items():
+        for player in team_data["players"]:
+            if player["name"] == player_name:
+                return player["points_per_game"]
+
+    return f"Player '{player_name}' not found."
+
+player_name = "Rui Hachimura"
+result = num_points_per_game(player_name)
+print(f"{player_name} has {result} points per game.")
+
+#age of players
+
+def player_age(player_name):
+    game_data = game_dict()
+
+    for team, team_data in game_data.items():
+        for player in team_data["players"]:
+            if player["name"] == player_name:
+                return player["age"]
+            
+    return f"Player '{player_name}' not found."
+
+player_name = "Rui Hachimura"
+result = player_age(player_name)
+print(f"{player_name} has {result} years.")
+
+
+# team colors
+
+def team_colors(team_name):
+    return team_colors
+
+
+if team_name in team_colors_data:
+        return team_colors_data[team_name]
+else:
+        return f"Team '{team_name}' not found."
+
+result_wizards = team_colors("Washington Wizards")
+
+print(result_wizards)
+
+
